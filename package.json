@@ -1,0 +1,30 @@
+{
+  "name": "read-that-rss",
+  "version": "1.0.0",
+  "description": "Rss reader for https://rss.hackclub.com/\r HALLOWEEN THEME FOC!!!!!!!!!!!!!!!!!!!!!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/build/app.js",
+    "build": "tsc",
+    "sass": "sass --watch src/assets/scss:src/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinSDK/Read-That-Rss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/AustinSDK/Read-That-Rss/issues"
+  },
+  "homepage": "https://github.com/AustinSDK/Read-That-Rss#readme",
+  "dependencies": {
+    "@types/express": "^5.0.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "sass": "^1.93.2"
+  }
+}
