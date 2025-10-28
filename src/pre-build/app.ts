@@ -1,8 +1,7 @@
 import { fileURLToPath } from 'url';
-import { dirname, join as pathJoin } from 'path';
+import { dirname, join as pathJoin, resolve as pathResolve } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { existsSync } from 'fs';
 
 import express from "express";
 
@@ -11,17 +10,34 @@ import dotenv from 'dotenv';
 import dompurify from "dompurify";
 import { marked } from "marked";
 
+// Paths
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const __assets = pathJoin(__dirname,"../assets");
+
 // Config
 dotenv.config();
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', pathJoin(__dirname,"../assets/views"));
+app.set('views', pathJoin(__assets,"views"));
 
 // Paths
 app.get("/",(req,res)=>{
     res.render("index.ejs")
 })
+app.get("/css/:stylesheet",(req,res)=>{
+    let cssPath = pathJoin(__assets,"css");
+    let newPath = pathResolve(pathJoin(cssPath,req.params.stylesheet));
+
+    if (!newPath.startsWith(cssPath)){
+        return res.status(400).json({"Error":"Please we are just a blog. dont hack meeeeeeeeeeeeee"});
+    }
+    if (!existsSync(newPath)){
+        return res.status(404).json({"Error":"Could not find the file."});
+    }
+    res.sendFile(newPath);
+});
 
 var port = <string>process.env.PORT;
 app.listen(port,e=>{
