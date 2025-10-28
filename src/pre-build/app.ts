@@ -10,14 +10,17 @@ import dotenv from 'dotenv';
 import dompurify from "dompurify";
 import { marked } from "marked";
 
+import Parser from "rss-parser"
+
+// Config
+let parser = new Parser();
+dotenv.config();
+const app = express();
+
 // Paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const __assets = pathJoin(__dirname,"../assets");
-
-// Config
-dotenv.config();
-const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', pathJoin(__assets,"views"));
@@ -25,6 +28,16 @@ app.set('views', pathJoin(__assets,"views"));
 // Paths
 app.get("/",(req,res)=>{
     res.render("index.ejs")
+})
+app.get("/feed",async (req,res)=>{
+    if (!req.query || !req.query.url){
+        return res.redirect("/")
+    }
+    let _fetch = await fetch(<string>req.query.url);
+    let _text = await _fetch.text();
+    var feed = await parser.parseString(_text);
+    console.log(feed)
+    res.render("feed.ejs",{feed:feed});
 })
 app.get("/css/:stylesheet",(req,res)=>{
     let cssPath = pathJoin(__assets,"css");
