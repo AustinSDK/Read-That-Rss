@@ -1,3 +1,2 @@
 # Read-That-Rss
-Rss reader for https://rss.hackclub.com/
-HALLOWEEN THEME FOC!!!!!!!!!!!!!!!!!!!!!
+A simple windows 98 style RSS reader!
