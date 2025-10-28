@@ -7,7 +7,6 @@ import express from "express";
 
 import dotenv from 'dotenv';
 
-import dompurify from "dompurify";
 import { marked } from "marked";
 
 import Parser from "rss-parser"
