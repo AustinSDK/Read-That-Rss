@@ -9,9 +9,9 @@
     <style>
         body{
             background-image: url("/images/background.png");
-            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-attachment: fixed;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
                 <h5><%= feed.description %></h5>
 
                 <section class="items" style="display: grid; grid-template-columns: repeat(1, 1fr); column-gap: 10px;">
-                    <table class="interactive" style="width: 100%; height: 100%">
+                    <table class="interactive" style="width: 100%;">
                         <thead>
                             <tr>
                                 <th>Title</th>
