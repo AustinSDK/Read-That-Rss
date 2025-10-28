@@ -11,7 +11,11 @@ body {
         ". a ."
         ". . .";
 
-    background-color: $bg;
+    // background-color: $bg;
+    background-image: url("/images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     div.window {
         grid-area: a;

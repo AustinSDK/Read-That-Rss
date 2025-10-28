@@ -110,6 +110,20 @@ app.get("/css/:stylesheet", (req, res) => {
     }
     res.sendFile(newPath);
 });
+app.get("/images/:image", (req, res) => {
+    let imagesPath = pathJoin(__assets, "images");
+    let newPath = pathResolve(pathJoin(imagesPath, req.params.image));
+    if (!newPath.startsWith(imagesPath)) {
+        return res.status(400).json({ "Error": "Please we are just a blog. dont hack meeeeeeeeeeeeee" });
+    }
+    if (!existsSync(newPath)) {
+        return res.status(404).json({ "Error": "Could not find the file." });
+    }
+    res.sendFile(newPath);
+});
+app.use((req, res) => {
+    res.redirect("/");
+});
 var port = process.env.PORT;
 app.listen(port, e => {
     if (e) {

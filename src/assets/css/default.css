@@ -6,7 +6,10 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: ". . ." ". a ." ". . .";
-  background-color: rgb(5, 5, 5);
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 body div.window {
   grid-area: a;
