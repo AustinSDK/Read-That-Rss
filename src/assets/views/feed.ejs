@@ -4,16 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= feed.title %></title>
-    <!-- <link rel="stylesheet" href="/css/default.css"> -->
+    <link rel="stylesheet" href="/css/default.css">
     <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <style>
-        body{
-            background-image: url("/images/background.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-    </style>
 </head>
 <body style="background-color: rgb(5, 5, 5);">
     <section>
@@ -21,9 +13,9 @@
             <div class="title-bar">
                 <div class="title-bar-text"><%= feed.title %></div>
                 <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <!-- <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button> -->
+                <button aria-label="Close" onclick="document.location.href = '/'"></button>
                 </div>
             </div>
             <div class="window-body">

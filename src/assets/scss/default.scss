@@ -1,25 +1,6 @@
 @import "colors";
-@import url("https://unpkg.com/98.css");
+
 body {
-    color: white;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas:
-        ". . ."
-        ". a ."
-        ". . .";
-
-    // background-color: $bg;
-    background-image: url("/images/background.png");
+    background: url("/images/background.webp") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    div.window {
-        grid-area: a;
-        place-self: center;
-        scale: 1.5;
-    }
 }
