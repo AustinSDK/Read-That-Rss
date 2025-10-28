@@ -22,10 +22,7 @@
   },
   "homepage": "https://github.com/AustinSDK/Read-That-Rss#readme",
   "dependencies": {
-    "@types/better-sqlite3": "^7.6.13",
     "@types/express": "^5.0.5",
-    "better-sqlite3": "^12.4.1",
-    "dompurify": "^3.3.0",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",

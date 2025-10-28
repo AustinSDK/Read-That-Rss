@@ -28,7 +28,6 @@ app.get("/feed", async (req, res) => {
         let _fetch = await fetch(req.query.url);
         let _text = await _fetch.text();
         var feed = await parser.parseString(_text);
-        console.log(feed);
         res.render("feed.ejs", { feed: feed });
     }
     catch (e) {
