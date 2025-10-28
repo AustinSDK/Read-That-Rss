@@ -1,0 +1,20 @@
+@import "colors";
+@import url("https://unpkg.com/98.css");
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        ". . ."
+        ". a ."
+        ". . .";
+
+    background-color: $bg;
+
+    div.window {
+        grid-area: a;
+        place-self: center;
+        scale: 1.5;
+    }
+}

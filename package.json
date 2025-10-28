@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/build/app.js",
     "build": "tsc --build --verbose",
-    "test":"npm run build && npm run start",
+    "test": "npm run build && npm run start",
     "sass": "sass --watch src/assets/scss:src/assets/css"
   },
   "repository": {
