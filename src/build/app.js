@@ -35,6 +35,9 @@ app.get("/feed", async (req, res) => {
         return res.redirect("/");
     }
 });
+app.get("/test.xml", async (req, res) => {
+    return res.sendFile(pathJoin(__assets, "test.xml"));
+});
 app.get("/css/:stylesheet", (req, res) => {
     let cssPath = pathJoin(__assets, "css");
     let newPath = pathResolve(pathJoin(cssPath, req.params.stylesheet));
