@@ -34,8 +34,8 @@
                         <tbody>
                         <% feed.items.forEach(element => { %>
                         <tr data-content="<%= element.content %>" data-title="<%= element.title %>" data-link="<%= element.link %>" data-pubdate="<%= element.pubDate %>">
-                            <td><%= element.title %></td>
-                            <td><%= element.contentSnippet.length > 21 ? element.contentSnippet.substring(0, 21) + '...' : element.contentSnippet %></td>
+                            <td><%= element.title.length > 50 ? element.title.substring(0, 50) + '...' : element.title %></td>
+                            <td><%= element.contentSnippet.length > 50 ? element.contentSnippet.substring(0, 50) + '...' : element.contentSnippet %></td>
                             <td><%= element.pubDate %></td>
                         </tr>
                         <% }) %>
