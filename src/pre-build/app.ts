@@ -33,11 +33,15 @@ app.get("/feed",async (req,res)=>{
     if (!req.query || !req.query.url){
         return res.redirect("/")
     }
-    let _fetch = await fetch(<string>req.query.url);
-    let _text = await _fetch.text();
-    var feed = await parser.parseString(_text);
-    console.log(feed)
-    res.render("feed.ejs",{feed:feed});
+    try{
+        let _fetch = await fetch(<string>req.query.url);
+        let _text = await _fetch.text();
+        var feed = await parser.parseString(_text);
+        res.render("feed.ejs",{feed:feed});
+    } catch (e){
+        console.error(e)
+        return res.redirect("/")
+    }
 })
 app.get("/css/:stylesheet",(req,res)=>{
     let cssPath = pathJoin(__assets,"css");
